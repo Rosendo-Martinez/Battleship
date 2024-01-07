@@ -107,7 +107,7 @@ class AIPlayer extends Player {
             attackableCoordinates.forEach((coordinate) => {
                 const rowDistance = Math.abs(coordinate.row - shipLocation.row);
                 const columnDistance = Math.abs(coordinate.column - shipLocation.column);
-                const isPossibleOptimalCoordinate = ((rowDistance === 0 && columnDistance !== 0) || (rowDistance !== 0 && columnDistance === 0));
+                const isPossibleOptimalCoordinate = ((rowDistance === 0 && columnDistance === 1) || (rowDistance === 1 && columnDistance === 0));
                 if (isPossibleOptimalCoordinate) {
                     optimalAttackCoordinates.push(coordinate);
                 }

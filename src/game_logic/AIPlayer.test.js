@@ -39,7 +39,7 @@ test('4 optimal attacks, and 3 unoptimal attacks, (unkown orientation of ship)',
      * 2 o o o - o o o o o o
      * 3 o o - x - o o o o o
      * 4 o o o - o o o o o o
-     * 5 o o o o o o o o o o
+     * 5 o o o - o o o o o o
      * 6 o o o o o o o o o o
      * 7 o o o o o o o o o o
      * 8 o o o o o o o o o o
@@ -47,7 +47,7 @@ test('4 optimal attacks, and 3 unoptimal attacks, (unkown orientation of ship)',
      */
 
     const optimalAttackCoordinates = [{row:2,column:3},{row:3,column:2},{row:3,column:4}, {row:4,column:3}];
-    const unoptimalAttackCoordinates = [{row:0,column:0},{row:0,column:1},{row:0,column:2}];
+    const unoptimalAttackCoordinates = [{row:0,column:0},{row:0,column:1},{row:0,column:2}, {row:5,column:3}];
     const attackableCoordinates = [...unoptimalAttackCoordinates,...optimalAttackCoordinates,];
     const foundShipCoordinates = [{row:3,column:3}];
     const mockGetRandomItem = jest.fn((array) => array[1]);
@@ -225,18 +225,26 @@ test('Found ship of max size (5)', () => {
 /** updateAttackHistory Tests */
 
 test('Update attack history with hit', () => {
+    const ROWS = 10;
+    const COLUMNS = 10;
     const myAIPlayer = new AIPlayer(null,null);
     const attackCoordinate = {row:0,column:1};
     const isHit = true;
     myAIPlayer.updateAttackHistory(attackCoordinate,isHit);
     expect(myAIPlayer.getFoundShipCoordinates()).toContainEqual(attackCoordinate);
+    expect(myAIPlayer.getFoundShipCoordinates()).toHaveLength(1);
     expect(myAIPlayer.getAttackableCoordinates()).not.toContainEqual(attackCoordinate);
+    expect(myAIPlayer.getAttackableCoordinates()).toHaveLength(ROWS * COLUMNS - 1);
 })
 
 test('Update attack history with miss', () => {
+    const ROWS = 10;
+    const COLUMNS = 10;
     const myAIPlayer = new AIPlayer(null,null);
     const attackCoordinate = {row:0,column:1};
     const isHit = false;
     myAIPlayer.updateAttackHistory(attackCoordinate,isHit);
+    expect(myAIPlayer.getFoundShipCoordinates()).toHaveLength(0);
     expect(myAIPlayer.getAttackableCoordinates()).not.toContainEqual(attackCoordinate);
+    expect(myAIPlayer.getAttackableCoordinates()).toHaveLength(ROWS * COLUMNS - 1);
 })
