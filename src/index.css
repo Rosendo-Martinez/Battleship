@@ -1,0 +1,236 @@
+/* APP */
+.app-top, .app-bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.app {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    min-height: 100vh;
+}
+
+
+/* STATUS BAR */
+.status-bar {
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    /* max-width: 320px; */
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem;
+}
+
+.status-bar .sub-status {
+    align-self: flex-end;
+    margin-bottom: 0;
+    font-size: 0.7rem;
+    /* opacity: 0;
+    transition: opacity 0.5s ease-out 0s; */
+  }
+  
+  .status-bar .main-status {
+    align-self: center;
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+  
+  /* animations */
+  /* .status-bar .show {
+    opacity: 1;
+  } */
+
+  /* .status-bar .hide {
+    opacity: 0;
+  } */
+  
+/* @keyframes blink-in {
+    from {
+        opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+} */
+
+/* .blink-out {
+    animation: blink-out 0.5s linear 1;
+    opacity: 0;
+}
+  
+@keyframes blink-out {
+    from {
+        opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+} */
+
+
+/* GAME CONTROLLERS */
+.game-controllers {
+    max-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.start, .reset {
+  margin: 1rem;
+}
+
+.game-mode {
+  margin: 1rem;
+}
+
+/* pushable Button Styling */
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* Gameboard */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+
+    grid-gap: 2px;
+    background-color: rgb(170, 170, 170);
+
+    border: 2px solid rgb(107, 107, 107);
+    width: fit-content;
+
+    margin: 2rem;
+}
+
+.subgrid {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.boat {
+  background-color: lightblue;
+}
+
+.miss {
+  background-color: red;
+}
+
+.hit {
+  background-color: green;
+}
