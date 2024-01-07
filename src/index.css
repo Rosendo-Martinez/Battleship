@@ -12,13 +12,19 @@
     justify-content: space-around;
     
     min-height: 100vh;
+    background-color: #ECECEC;
+    font-family: 'Play', sans-serif !important;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
 /* STATUS BAR */
 .status-bar {
-    background-color: antiquewhite;
-    border: 1px solid black;
+    /* background-color: antiquewhite; */
+    background-color: #d0eaff74;
+    /* border: 1px solid black; */
+    border: 2px solid #606060;
     border-radius: 10px;
 
     /* max-width: 320px; */
@@ -37,12 +43,20 @@
     /* opacity: 0;
     transition: opacity 0.5s ease-out 0s; */
   }
+
+.sub-status.top {
+  margin-bottom: 0.25rem;
+}
+
+.sub-status.bottom {
+  margin-top: 0.25rem;
+}
   
-  .status-bar .main-status {
+.status-bar .main-status {
     align-self: center;
     margin-bottom: 0;
     font-size: 2rem;
-  }
+}
   
   /* animations */
   /* .status-bar .show {
@@ -201,6 +215,55 @@
   outline: none;
 }
 
+/* RESET AND START BUTTONS */
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  /* background-color: #FCFCFD; */
+  background-color: #ECECEC;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 
 /* Gameboard */
 .grid {
@@ -211,26 +274,32 @@
     grid-gap: 2px;
     background-color: rgb(170, 170, 170);
 
-    border: 2px solid rgb(107, 107, 107);
+    /* border: 2px solid rgb(107, 107, 107); */
+    background-color: #606060;
+    border: 2px solid #606060;
     width: fit-content;
 
     margin: 2rem;
 }
 
 .subgrid {
-    background-color: white;
+    /* background-color: white; */
+    background-color: #ECECEC;
     width: 30px;
     height: 30px;
 }
 
 .boat {
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color: #A5D1F3;
 }
 
 .miss {
-  background-color: red;
+  /* background-color: red; */
+  background-color: #606060;
 }
 
 .hit {
-  background-color: green;
+  /* background-color: green; */
+  background-color: #E4001B;
 }
