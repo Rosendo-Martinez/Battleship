@@ -2,6 +2,8 @@
 
 This project is a web browser version of the boardgame Battleship. This project was built using **Test Driven Development** (TDD).
 
+**Live demo [link](https://rosendo-martinez.github.io/Battleship/)**. 👈
+
 ### Technology Used: 
 - Jest (JavaScript Testing Framework)
 - JavaScript
